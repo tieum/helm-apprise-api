@@ -28,7 +28,7 @@ spec:
             readOnlyRootFilesystem: false
             runAsGroup: 33
             runAsUser: 33
-          image: "{{ .Values.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: config-volume
