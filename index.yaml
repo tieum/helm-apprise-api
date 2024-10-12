@@ -3,6 +3,23 @@ entries:
   apprise-api:
   - apiVersion: v1
     appVersion: v1.1.16
+    created: "2024-10-12T22:52:48.172134867Z"
+    description: apprise-api helm chart
+    digest: b11a003a5c84747ae4bc56913d189b70ed1d7984a13920268a7d3c60ec81bf77
+    home: https://github.com/tieum/helm-charts/tree/main/charts/apprise-api
+    keywords:
+    - apprise
+    - notifications
+    kubeVersion: '>=1.26'
+    name: apprise-api
+    sources:
+    - https://github.com/tieum/helm-charts/tree/main/charts/apprise-api
+    - https://github.com/caronc/apprise-api
+    urls:
+    - https://github.com/tieum/helm-charts/releases/download/apprise-api-0.0.2/apprise-api-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v1
+    appVersion: v1.1.16
     created: "2024-10-12T22:31:50.665104875Z"
     description: Apprise-api
     digest: 3ce6d30d803a65c1d5aa84ce1c7dfb40f6bbdd05fa4935f9b88fb1d12ce33223
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://github.com/tieum/helm-charts/releases/download/apprise-api-0.0.1/apprise-api-0.0.1.tgz
     version: 0.0.1
-generated: "2024-10-12T22:31:50.665136363Z"
+generated: "2024-10-12T22:52:48.172179691Z"
