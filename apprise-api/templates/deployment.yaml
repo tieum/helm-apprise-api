@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apprise-api
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: apprise-api
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: apprise-api
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: apprise-api
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+    spec:
+      securityContext:
+        fsGroup: 33
+      containers:
+        - name: apprise-api
+          securityContext:
+            readOnlyRootFilesystem: false
+            runAsGroup: 33
+            runAsUser: 33
+          image: "{{ .Values.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config/
+          env:
+            - name: APPRISE_STATEFUL_MODE
+              value: {{ .Values.config.stateful_mode }}
+            - name: APPRISE_WORKER_COUNT
+              value: {{ .Values.config.worker_count }}
+      volumes:
+        - name: config-volume
+          persistentVolumeClaim:
+            claimName: apprise-api 
