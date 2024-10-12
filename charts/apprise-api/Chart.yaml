@@ -1,13 +1,13 @@
 apiVersion: v1
-description: Apprise-api 
+description: apprise-api helm chart
 name: apprise-api
-version: 0.0.1
+version: 0.0.2
 appVersion: "v1.1.16"
 keywords:
   - apprise
   - notifications
 kubeVersion: ">=1.26"
-home: https://github.com/tieum/helm-apprise-api
+home: https://github.com/tieum/helm-charts/tree/main/charts/apprise-api
 sources:
-  - https://github.com/tieum/helm-apprise-api.git
-  - https://github.com/caronc/apprise-api.git
+  - https://github.com/tieum/helm-charts/tree/main/charts/apprise-api
+  - https://github.com/caronc/apprise-api
