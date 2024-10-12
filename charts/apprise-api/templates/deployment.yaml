@@ -21,13 +21,10 @@ spec:
         app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     spec:
       securityContext:
-        fsGroup: 33
       containers:
         - name: apprise-api
           securityContext:
             readOnlyRootFilesystem: false
-            runAsGroup: 33
-            runAsUser: 33
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
