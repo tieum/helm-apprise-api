@@ -37,7 +37,7 @@ spec:
             - name: APPRISE_STATEFUL_MODE
               value: {{ .Values.config.stateful_mode }}
             - name: APPRISE_WORKER_COUNT
-              value: {{ .Values.config.worker_count }}
+              value: "{{ .Values.config.worker_count }}"
       volumes:
         - name: config-volume
           persistentVolumeClaim:
