@@ -1,2 +1,3 @@
-# helm-apprise-api
-Helm chart for apprise-api
+# helm-charts
+
+- [apprise-api](apprise-api/) - [source repo](https://github.com/caronc/apprise-api)
