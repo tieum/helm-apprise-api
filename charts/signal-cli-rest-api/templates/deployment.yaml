@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: signal-cli-rest-api
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: signal-cli-rest-api
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: signal-cli-rest-api
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: signal-cli-rest-api
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+    spec:
+      containers:
+        - name: signal-cli-rest-api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /home/.local/share/signal-cli
+          env:
+            - name: MODE
+              value: {{ .Values.config.mode }}
+      volumes:
+        - name: config-volume
+          persistentVolumeClaim:
+            claimName: signal-cli-rest-api 

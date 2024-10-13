@@ -1,0 +1,10 @@
+# Default values for apprise-api
+config:
+  mode: native 
+image:
+  repository: docker.io/bbernhard/signal-cli-rest-api
+  tag: 0.89
+  pullPolicy: IfNotPresent
+persistence:
+  storageClass: standard
+  storageSize: 100Mi
