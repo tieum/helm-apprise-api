@@ -1,6 +1,6 @@
 # Default values for apprise-api
 config:
-  mode: native 
+  mode: native
 image:
   repository: docker.io/bbernhard/signal-cli-rest-api
   tag: 0.89

@@ -4,7 +4,7 @@ name: signal-cli-rest-api
 version: 0.0.1
 appVersion: "0.89"
 keywords:
-  - signal 
+  - signal
   - notifications
 kubeVersion: ">=1.26"
 home: https://github.com/tieum/helm-charts/tree/main/charts/signal-cli-rest-api
