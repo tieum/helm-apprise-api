@@ -2,9 +2,9 @@
 config:
   mode: native
 image:
-  repository: docker.io/bbernhard/signal-cli-rest-api
-  tag: 0.89
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/tieum/signal-cli-rest-api
+  tag: master
+  pullPolicy: Always
 persistence:
   storageClass: standard
   storageSize: 100Mi

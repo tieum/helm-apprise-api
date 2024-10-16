@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 spec:
-  replicas: 
+  replicas:
   selector:
     matchLabels:
       app.kubernetes.io/name: signal-cli-rest-api
@@ -33,4 +33,4 @@ spec:
       volumes:
         - name: config-volume
           persistentVolumeClaim:
-            claimName: signal-cli-rest-api 
+            claimName: signal-cli-rest-api
